@@ -1,0 +1,8 @@
+.idea
+build
+bundle
+localize
+node_modules
+node_modules_internal
+node
+target
