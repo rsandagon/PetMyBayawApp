@@ -6,6 +6,7 @@ import signals = require('kola-signals');
 import hooks = require('kola-hooks');
 import PIXI = require('pixi.js');
 import models = require('../models');
+import tweenLite = require('gsap');
 
 export interface Kontext extends kola.Kontext {
     setSignal<T>(name: string, hook?: kola.Hook<T>): kola.SignalHook<T>;
@@ -51,7 +52,7 @@ export class App extends kola.App<{container:PIXI.Container}> {
     }
 
     onClick(mouseData):void{
-       TweenLite.to(this.sprite.scale, 1, { x: 0, y: 0 , onComplete: this.introDone.bind(this)});
+        tweenLite.to(this.sprite.scale, 1, { x: 0, y: 0 , onComplete: this.introDone.bind(this)});
     }
 
     introDone():void{
